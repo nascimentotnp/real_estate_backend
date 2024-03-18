@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer
 
 from app.domain.entity.users import User
 
@@ -6,7 +6,8 @@ from app.domain.entity.users import User
 class HouseOwner(User):
     __tablename__ = 'proprietario'
 
-    id = Column(Integer, ForeignKey('usuarios.id'), primary_key=True)
-    cpf = Column('cpf', String, nullable=False, unique=True)
+    id = Column('cpf', Integer, primary_key=True, nullable=False, unique=True)
+    owner_id = Column(Integer, ForeignKey('usuarios.id'), primary_key=True)
+
 
 

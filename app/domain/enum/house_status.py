@@ -3,6 +3,7 @@ from enum import Enum
 
 
 class HouseStatus(Enum):
-    SOULD = 'VENDIDA'
+    SOLD = 'VENDIDA'
     FOR_SALE = 'A_VENDA'
-    AUCTION = 'LEILAO'
+    FOR_RENT = 'PARA_ALUGAR'
+    RENTED = 'ALUGADA'
