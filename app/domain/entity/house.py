@@ -24,6 +24,7 @@ class House(Base):
     updated_at = Column(DateTime, nullable=False, server_default='NOW()')
     active = Column(Boolean, nullable=False)
     photo = Column(String(500), nullable=False)
+    views = Column(Integer, nullable=False)
 
     def __init__(self, description, address, number, zip_code, district, city, state, country, price, status,
                  house_owner_id, created_at, active=True):

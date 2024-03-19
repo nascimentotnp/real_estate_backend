@@ -1,6 +1,7 @@
 import logging
 
 from app.domain.entity.house import House
+from app.domain.enum.house_status import HouseStatus
 from app.gateways.databases import gateway_database
 from app.gateways.databases.connection import session
 
@@ -53,3 +54,18 @@ def create_house(description, address, number, zip_code, district, city, state, 
                   created_at=created_at, active=active)
     gateway_database.save(house)
     logging.info("Propriedade criada com sucesso no banco de dados")
+
+
+def change_house_status(house_id, new_status):
+    house = get_house_by_id(house_id)
+    if house:
+        if isinstance(new_status, HouseStatus):
+            house.status = new_status.value
+            session.commit()
+            return True
+        else:
+            print("Erro: O novo status fornecido não é válido.")
+            return False
+    else:
+        print("Erro: Não foi possível encontrar a casa para atualizar.")
+        return False

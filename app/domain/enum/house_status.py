@@ -1,4 +1,3 @@
-
 from enum import Enum
 
 
@@ -7,3 +6,4 @@ class HouseStatus(Enum):
     FOR_SALE = 'A_VENDA'
     FOR_RENT = 'PARA_ALUGAR'
     RENTED = 'ALUGADA'
+    NEW_OWNER = 'NOVO_PROPRIETARIO'

@@ -4,7 +4,6 @@ LABEL mainteiner=luizlagj
 
 ENV PORT=$app_port
 
-#RUN pip install debugpy
 RUN pip install uvicorn==0.23.2
 
 
